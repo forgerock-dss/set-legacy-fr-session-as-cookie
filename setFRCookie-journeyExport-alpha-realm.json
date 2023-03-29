@@ -1,0 +1,267 @@
+{
+  "meta": {
+    "origin": "https://openam-darinder-wforce.forgeblocks.com/platform/?realm=alpha#/journeys/setFRCookie",
+    "exportedBy": "darinder.shokar@forgerock.com",
+    "exportDate": "2023-03-29T17:14:34.891Z",
+    "exportTool": "platform-admin ui tree export",
+    "exportToolVersion": "1.0",
+    "treesSelectedForExport": [
+      "setFRCookie"
+    ],
+    "innerTreesIncluded": []
+  },
+  "trees": {
+    "setFRCookie": {
+      "tree": {
+        "_id": "setFRCookie",
+        "_rev": "409679444",
+        "identityResource": "managed/alpha_user",
+        "uiConfig": {
+          "categories": "[\"Authentication\"]"
+        },
+        "entryNodeId": "804c4d71-e5c1-462d-b4d1-8282fcab03e4",
+        "nodes": {
+          "7b8f3353-7c6b-4aae-8ff1-ec9cca91235c": {
+            "x": 991,
+            "y": 157,
+            "connections": {
+              "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+              "true": "eb2a7c72-38dc-4beb-b622-a88035af779f"
+            },
+            "nodeType": "MessageNode",
+            "displayName": "Message Node"
+          },
+          "804c4d71-e5c1-462d-b4d1-8282fcab03e4": {
+            "x": 210,
+            "y": 109,
+            "connections": {
+              "outcome": "96a6c65f-1bb8-4250-8529-b9c2ebcede4d"
+            },
+            "nodeType": "PageNode",
+            "displayName": "Page Node"
+          },
+          "96a6c65f-1bb8-4250-8529-b9c2ebcede4d": {
+            "x": 457,
+            "y": 143,
+            "connections": {
+              "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+              "true": "bd62a55b-4d55-41b2-8d0c-9fb165bc6cf0"
+            },
+            "nodeType": "DataStoreDecisionNode",
+            "displayName": "Data Store Decision"
+          },
+          "bd62a55b-4d55-41b2-8d0c-9fb165bc6cf0": {
+            "x": 691,
+            "y": 151,
+            "connections": {
+              "CONFIGURATION_FAILED": "7b8f3353-7c6b-4aae-8ff1-ec9cca91235c",
+              "outcome": "7b8f3353-7c6b-4aae-8ff1-ec9cca91235c"
+            },
+            "nodeType": "ConfigProviderNode",
+            "displayName": "Set Legacy FR Session Cookie"
+          },
+          "eb2a7c72-38dc-4beb-b622-a88035af779f": {
+            "x": 1203,
+            "y": 187.5,
+            "connections": {
+              "outcome": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+            },
+            "nodeType": "IncrementLoginCountNode",
+            "displayName": "Increment Login Count"
+          }
+        },
+        "staticNodes": {
+          "startNode": {
+            "x": 70,
+            "y": 155
+          },
+          "70e691a5-1e33-4ac3-a356-e7b6d60d92e0": {
+            "x": 1530,
+            "y": 180
+          },
+          "e301438c-0bd0-429c-ab0c-66126501069a": {
+            "x": 1046,
+            "y": 542
+          }
+        },
+        "description": "Platform Login Tree",
+        "enabled": true
+      },
+      "nodes": {
+        "7b8f3353-7c6b-4aae-8ff1-ec9cca91235c": {
+          "_id": "7b8f3353-7c6b-4aae-8ff1-ec9cca91235c",
+          "_rev": "-380635385",
+          "messageYes": {
+            "en": "Yes"
+          },
+          "message": {
+            "en": "Continue?"
+          },
+          "messageNo": {
+            "en": "No"
+          },
+          "_type": {
+            "_id": "MessageNode",
+            "name": "Message Node",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "true",
+              "displayName": "True"
+            },
+            {
+              "id": "false",
+              "displayName": "False"
+            }
+          ]
+        },
+        "804c4d71-e5c1-462d-b4d1-8282fcab03e4": {
+          "_id": "804c4d71-e5c1-462d-b4d1-8282fcab03e4",
+          "_rev": "-400109991",
+          "nodes": [
+            {
+              "_id": "cd8745fb-74c5-4bc9-bca0-f44706e4689d",
+              "nodeType": "ValidatedUsernameNode",
+              "displayName": "Platform Username"
+            },
+            {
+              "_id": "5df17984-0e2d-4659-b81e-c0386ffe28ca",
+              "nodeType": "ValidatedPasswordNode",
+              "displayName": "Platform Password"
+            }
+          ],
+          "pageDescription": {
+            "en": "New here? <a href=\"#/service/Registration\">Create an account</a><br><a href=\"#/service/ForgottenUsername\">Forgot username?</a><a href=\"#/service/ResetPassword\"> Forgot password?</a>"
+          },
+          "pageHeader": {
+            "en": "Sign In"
+          },
+          "_type": {
+            "_id": "PageNode",
+            "name": "Page Node",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        },
+        "96a6c65f-1bb8-4250-8529-b9c2ebcede4d": {
+          "_id": "96a6c65f-1bb8-4250-8529-b9c2ebcede4d",
+          "_rev": "1639346293",
+          "_type": {
+            "_id": "DataStoreDecisionNode",
+            "name": "Data Store Decision",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "true",
+              "displayName": "True"
+            },
+            {
+              "id": "false",
+              "displayName": "False"
+            }
+          ]
+        },
+        "bd62a55b-4d55-41b2-8d0c-9fb165bc6cf0": {
+          "_id": "bd62a55b-4d55-41b2-8d0c-9fb165bc6cf0",
+          "_rev": "-1035556434",
+          "script": "1964981a-fc2d-4235-b93c-ab2ef44bd242",
+          "nodeType": "SetCustomCookieNode",
+          "_type": {
+            "_id": "ConfigProviderNode",
+            "name": "Configuration Provider",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            },
+            {
+              "id": "CONFIGURATION_FAILED",
+              "displayName": "Configuration failure"
+            }
+          ]
+        },
+        "eb2a7c72-38dc-4beb-b622-a88035af779f": {
+          "_id": "eb2a7c72-38dc-4beb-b622-a88035af779f",
+          "_rev": "2048369136",
+          "identityAttribute": "userName",
+          "_type": {
+            "_id": "IncrementLoginCountNode",
+            "name": "Increment Login Count",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        }
+      },
+      "innerNodes": {
+        "cd8745fb-74c5-4bc9-bca0-f44706e4689d": {
+          "_id": "cd8745fb-74c5-4bc9-bca0-f44706e4689d",
+          "_rev": "718807347",
+          "usernameAttribute": "userName",
+          "validateInput": false,
+          "_type": {
+            "_id": "ValidatedUsernameNode",
+            "name": "Platform Username",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        },
+        "5df17984-0e2d-4659-b81e-c0386ffe28ca": {
+          "_id": "5df17984-0e2d-4659-b81e-c0386ffe28ca",
+          "_rev": "1925516568",
+          "passwordAttribute": "password",
+          "validateInput": false,
+          "_type": {
+            "_id": "ValidatedPasswordNode",
+            "name": "Platform Password",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        }
+      },
+      "scripts": {
+        "1964981a-fc2d-4235-b93c-ab2ef44bd242": {
+          "_id": "1964981a-fc2d-4235-b93c-ab2ef44bd242",
+          "name": "set-fr-cookie",
+          "description": null,
+          "script": "\"//Create shadow session on legacy FR\\n\\n/**\\n * Script configuration\\n*/\\nvar config = {\\n    /**\\n     * @property {string} frUrl - ESV referencing the URL of the legacy FR deployment\\n     * @property {string} frDomain - ESV referencing the domain to set the legacy cookie against\\n     * @property {string} realm - ESV referencing the legacy FR deployment realm\\n     * @property {string} service - ESV referencing the legacy FR login Journey or Chain\\n     * @property {string} nodeName - The name of the executing node, used for logging\\n     * \\n     */\\n    frUrl: \\\"esv.legacy.fr.url\\\",\\n    frDomain: \\\"esv.legacy.fr.domain\\\",\\n    frRealm: \\\"esv.legacy.fr.realm\\\",\\n    frService: \\\"esv.legacy.fr.service\\\",\\n    frCookieName: \\\"esv.legacy.fr.cookie\\\",\\n    nodeName: \\\"***set-legacy-fr-cookie\\\"\\n};\\n\\n/**\\n * Add the node info prefix to a log message\\n * @param {string} message - the message body\\n * @returns a tagged version of the message\\n */\\nfunction tag(message) {\\n    return \\\"***\\\".concat(config.nodeName).concat(\\\": \\\").concat(message);\\n}\\n\\nlogger.message(tag(\\\"Starting Set Cookie Config Provider Script\\\"));\\n\\n//Set ESVs to variables\\nvar url = systemEnv.getProperty(config.frUrl);\\nvar domain = systemEnv.getProperty(config.frDomain);\\nvar realm = systemEnv.getProperty(config.frRealm);\\nvar service = systemEnv.getProperty(config.frService);\\nvar cookieName = systemEnv.getProperty(config.frCookieName);\\n\\nlogger.message(tag(\\\"Legacy FR target is here: \\\" + url));\\nlogger.message(tag(\\\"Cookie will be set against this domain: \\\" + domain));\\nlogger.message(tag(\\\"Legacy FR realm is: \\\" + realm));\\nlogger.message(tag(\\\"Legacy FR login Journey or Chain is: \\\" + service));\\nlogger.message(tag(\\\"Legacy FR cookie name is: \\\" + cookieName));\\n\\nvar request = new org.forgerock.http.protocol.Request();\\nrequest.setUri(\\\"https://\\\"+url+\\\"/am/json/realms/root/realms/\\\"+realm+\\\"/authenticate?authIndexType=service&authIndexValue=\\\"+service);\\nrequest.setMethod(\\\"POST\\\");\\nrequest.getHeaders().add(\\\"X-OpenAM-Username\\\", nodeState.get(\\\"username\\\").asString());\\nrequest.getHeaders().add(\\\"X-OpenAM-Password\\\", nodeState.get(\\\"password\\\").asString());\\nrequest.getHeaders().add(\\\"Accept-API-Version\\\", \\\"resource=2.0, protocol=1.0\\\");\\nrequest.getHeaders().add(\\\"Content-Type\\\", \\\"application/json\\\");\\nvar response = httpClient.send(request).get();\\n\\nvar legacyResponse = response.getEntity().getJson();\\nlogger.message(tag(\\\"Response from: \\\" + url + \\\": \\\" + legacyResponse));\\n\\n//Setting configuration for Set Cookie node\\n//Some scenarios may require sameSite set to NONE\\nconfig = {\\n    \\\"name\\\": cookieName,\\n    \\\"value\\\": (legacyResponse.tokenId)?legacyResponse.tokenId:\\\"Error getting legacy token\\\",\\n    \\\"domain\\\": domain,\\n    \\\"path\\\": \\\"/\\\",\\n    \\\"useSecureCookie\\\": true,\\n    \\\"useHttpOnlyCookie\\\": true,\\n    \\\"sameSite\\\": \\\"LAX\\\"\\n};\"",
+          "default": false,
+          "language": "JAVASCRIPT",
+          "context": "CONFIG_PROVIDER_NODE",
+          "createdBy": "null",
+          "creationDate": 0,
+          "lastModifiedBy": "null",
+          "lastModifiedDate": 0
+        }
+      },
+      "emailTemplates": {},
+      "socialIdentityProviders": {},
+      "themes": [],
+      "saml2Entities": {},
+      "circlesOfTrust": {}
+    }
+  }
+}
