@@ -1,6 +1,6 @@
 {
   "meta": {
-    "origin": "https://openam-darinder-wforce.forgeblocks.com/platform/?realm=alpha#/journeys/setFRCookie",
+    "origin": "https://openam-mytenant.com/platform/?realm=alpha#/journeys/setFRCookie",
     "exportedBy": "darinder.shokar@forgerock.com",
     "exportDate": "2023-03-29T17:14:34.891Z",
     "exportTool": "platform-admin ui tree export",
